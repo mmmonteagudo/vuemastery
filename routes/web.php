@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/intro/lessons/{no}', function($no){
+    return view('vuemastery.lesson' . str_pad($no, 3, "0", STR_PAD_LEFT));
+});
+
 
 Auth::routes();
 
